@@ -45,4 +45,26 @@ public class ForoUsuarioPersistenceTest {
             daof.endSession();  
         }      
     }
+    
+     @Test
+    public void NewUserErrorTest() throws IOException, PersistenceException{
+        properties.load(input);
+        DaoFactory daof=DaoFactory.getInstance(properties);        
+        try{
+            daof.beginSession();
+            DaoUsuario user = daof.getDaoUsuario();
+            Usuario Luis = new Usuario("ElPapi@gmail.com","Pipe");
+            user.save(Luis);
+            user.save(Luis);
+            daof.commitTransaction();
+            fail("SOMOS UNAS HUEVAS");
+        }catch(PersistenceException ex){
+            assertTrue("Prueba buena",true);
+        }catch(Exception ex){
+            fail("SOMOS RE TONTOS "+ex.getMessage());
+        }
+        finally{
+            daof.endSession();  
+        }      
+    }
 }
