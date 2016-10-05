@@ -51,8 +51,7 @@ public class JDBCDaoUsuario implements DaoUsuario {
             ResultSet result = ps.executeQuery();
             while(result.next()){
                 if(result.getString(1).equals(email)){
-                    user.setEmail(result.getString(1));
-                    user.setNombre(result.getString(2));
+                    user = new Usuario(result.getString(1), result.getString(2));
                 }
             } 
             

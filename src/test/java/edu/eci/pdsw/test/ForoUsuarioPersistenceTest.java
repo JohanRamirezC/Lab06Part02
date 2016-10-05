@@ -40,8 +40,7 @@ public class ForoUsuarioPersistenceTest {
             fail("SOMOS UNAS HUEVAS  " +ex2.getMessage());
         }catch(Exception ex){
             fail("SOMOS RE TONTOS "+ex.getMessage());
-        }
-        finally{
+        }finally{
             daof.endSession();  
         }      
     }
