@@ -45,7 +45,7 @@ public class JDBCDaoUsuario implements DaoUsuario {
         PreparedStatement ps;        
         Usuario user = null;
         try {
-            String consulta = "SELECT email,nombre FROM USUARIO WHERE email=?";
+            String consulta = "SELECT email,nombre FROM USUARIOS WHERE email=?";
             ps = con.prepareStatement(consulta);
             ps.setString(1, email);
             ResultSet result = ps.executeQuery();
@@ -65,8 +65,18 @@ public class JDBCDaoUsuario implements DaoUsuario {
     @Override
     public void save(Usuario u) throws PersistenceException {
         PreparedStatement ps;
+        try{
+            String consulta = "INSERT INTO USUARIOS(EMAIL,NOMBRE) VALUES (?,?)";
+            ps = con.prepareStatement(consulta);
+            ps.setString(1,u.getEmail());
+            ps.setString(2,u.getNombre());
+            ps.execute();
+                        
+        } catch (SQLException ex) {
+            throw new PersistenceException("Not save the new user "+ ex);
+        }
         
-        //throw new RuntimeException("No se ha implementado el metodo 'save' del DAOPUsuarioJDBC");
+
 
     }
 

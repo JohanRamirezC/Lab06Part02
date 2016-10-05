@@ -36,8 +36,8 @@ public class ForoUsuarioPersistenceTest {
             Usuario test = user.load(Pipe.getEmail());
             assertEquals("PASO HP!!!",test.getEmail(),Pipe.getEmail());
             daof.commitTransaction();
-        }catch(PersistenceException ex){
-            fail("SOMOS UNAS HUEVAS");
+        }catch(PersistenceException ex2){
+            fail("SOMOS UNAS HUEVAS  " +ex2.getMessage());
         }catch(Exception ex){
             fail("SOMOS RE TONTOS "+ex.getMessage());
         }
@@ -58,7 +58,7 @@ public class ForoUsuarioPersistenceTest {
             user.save(Luis);
             daof.commitTransaction();
             fail("SOMOS UNAS HUEVAS");
-        }catch(PersistenceException ex){
+        }catch(PersistenceException ex2){
             assertTrue("Prueba buena",true);
         }catch(Exception ex){
             fail("SOMOS RE TONTOS "+ex.getMessage());
