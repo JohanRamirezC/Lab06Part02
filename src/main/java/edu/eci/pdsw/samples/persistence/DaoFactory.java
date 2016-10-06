@@ -48,6 +48,8 @@ public abstract class DaoFactory {
     public abstract void beginSession() throws PersistenceException;
 
     public abstract DaoUsuario getDaoUsuario();
+    
+    public abstract DaoEntradaForo getDaoEntradaForo();
 
     public abstract void commitTransaction() throws PersistenceException;
 

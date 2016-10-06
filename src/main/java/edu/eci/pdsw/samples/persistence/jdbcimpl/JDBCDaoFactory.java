@@ -16,6 +16,7 @@
  */
 package edu.eci.pdsw.samples.persistence.jdbcimpl;
 
+import edu.eci.pdsw.samples.persistence.DaoEntradaForo;
 import edu.eci.pdsw.samples.persistence.DaoFactory;
 import edu.eci.pdsw.samples.persistence.PersistenceException;
 import java.sql.Connection;
@@ -121,6 +122,11 @@ public class JDBCDaoFactory extends DaoFactory {
     @Override
     public DaoUsuario getDaoUsuario() {
         return new JDBCDaoUsuario(connectionInstance.get());
+    }
+
+    @Override
+    public DaoEntradaForo getDaoEntradaForo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
