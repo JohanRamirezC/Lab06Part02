@@ -1,6 +1,8 @@
 ###Escuela Colombiana de Ingeniería
 ###Procesos de Desarrollo de Software - PDSW
 ##Laboratorio - Patrón DAO, JDBC, y pruebas.
+##Realizado por Hernan Felipe Losada (Chuzz1996)
+##Y Johan Ramirez (JohanRamirezC)
 
 ###Parte 1. JDBC (Para el martes, antes de clase).
 
